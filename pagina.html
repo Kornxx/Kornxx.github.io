@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tarea No.8</title>
+</head>
+<body>
+
+    <h1 align="center">Protocolo HHTP</h1>
+<p>Ishiro Isaac Angulo Roman 1C</p>
+    <hr size="1">
+
+    <h2>1. Definición del Protocolo </h2>
+    <p>
+        El Protocolo de Transferencia de Hipertexto (HTTP) es la regla fundamental para la transmisión de datos en la World Wide Web. Es un sistema que facilita la obtención y el envío de elementos como páginas HTML, imágenes, y programas (scripts).
+    </p>
+    <p>
+        Su diseño se basa en el esquema Cliente-Servidor. Aquí, el cliente (su navegador) siempre inicia el proceso al enviar una petición, y el servidor responde. Es crucial saber que HTTP es un protocolo sin memoria (stateless): el servidor no recuerda ninguna acción anterior del mismo cliente. Para poder mantener una secuencia de acciones (como una sesión de compra), es necesario usar herramientas adicionales, siendo las cookies la más conocida.
+    </p>
+
+    <h2>2. La Estructura y el Funcionamiento </h2>
+    <p>
+        La conversación entre el cliente y el servidor ocurre mediante el intercambio de mensajes de texto que tienen una forma muy clara y precisa.
+    </p>
+
+    <h3>Mensaje de Petición (Lo que el Cliente Envía)</h3>
+    <p>
+        Una petición incluye tres partes principales:
+    </p>
+    <ul>
+        <li>Línea de Inicio: Esta línea define la intención de la acción. Incluye el Método HTTP (la acción deseada), el identificador del recurso solicitado (su dirección) y la versión del protocolo que se está utilizando.</li>
+        <li>Cabeceras (Datos Extra): Contienen metadatos cruciales sobre el contexto de la petición. Suministran información vital, como el tipo de software que utiliza el cliente (User-Agent) y la variedad de contenido que el cliente es capaz de aceptar.</li>
+        <li>Cuerpo (Contenido): Esta sección es de carácter opcional. Contiene los datos que el cliente necesita transferir al servidor. Es mandatorio para operaciones que implican el envío de información, como la sumisión de un formulario.</li>
+    </ul>
+
+    <h3>Mensaje de Respuesta (Lo que el Servidor Devuelve)</h3>
+    <p>
+        El servidor contesta con un mensaje que se estructura así:
+    </p>
+    <ol>
+        <li>Línea de Estado:  Muestra el resultado de la solicitud. Contiene la versión de HTTP, el Código de Estado (un valor numérico que sintetiza el desenlace de la operación) y una breve frase que describe dicho estado (ejemplo: 200 OK).
+
+</li>
+        <li>Cabeceras (Datos Extra): Aportan información contextual sobre la respuesta, detalles del servidor y, de manera muy significativa, el tipo de contenido que se está entregando (Content-Type).</li>
+        <li>Cuerpo: Esta parte alberga el recurso solicitado propiamente dicho (el contenido de una página web, los datos de una imagen, etc.) o, en caso de que ocurra una incidencia, incluye un mensaje descriptivo que explica el error.
+
+</li>
+    </ol>
+
+    <h2>3-. Métodos de Petición </h2>
+    <p>
+        Los métodos HTTP definen el sentido de la acción que el cliente intenta llevar a cabo en el recurso. Son las órdenes que se le dan al servidor.
+    </p>
+    <ul>
+        <li>GET: Se utiliza para la solicitud y recuperación de datos. Es una operación considerada segura porque no debe inducir ninguna modificación en el estado del servidor.</li>
+        <li>POST: Empleado para la transmisión de datos al servidor, casi siempre con el propósito de crear un nuevo recurso.</li>
+        <li>PUT: Su finalidad es reemplazar completamente la representación actual de un recurso con la que es proporcionada en el cuerpo de la petición. Se considera una acción idempotente (repetirla múltiples veces produce el mismo resultado).</li>
+        <li>DELETE:  Indica la intención de eliminar el recurso localizado en la dirección especificada.</li>
+        <li>HEAD: Solicita una respuesta idéntica a la que se obtendría con un GET, pero omitiendo el cuerpo del mensaje. Su uso es común para examinar los metadatos sin incurrir en la descarga completa del archivo.</li>
+        <li>PATCH: Se utiliza para aplicar modificaciones parciales a un recurso, alterando únicamente una porción específica del mismo.</li>
+    </ul>
+
+    <h2>4-. Códigos de Respuesta </h2>
+    <p>
+        El Código de Estado es esencial; indica al cliente si su petición fue exitosa o falló. Estos códigos se organizan en cinco grupos:
+    </p>
+
+    <ul>
+        <li>1xx: Respuestas de Información: La petición fue recibida y se sigue procesando.</li>
+        <li>2xx: Todo Salió Bien: Confirman que la acción se completó con éxito. (Ej: 200 OK – El resultado estándar; 201 Created – Se creó un nuevo recurso).</li>
+        <li>3xx: Necesitas Ir a Otra Dirección (Redirección): El cliente debe hacer una acción extra para terminar la petición. (Ej: 301 Moved Permanently – El recurso tiene una dirección nueva de forma permanente).</li>
+        <li>4xx: Errores del Cliente: El fallo está en la petición que envió el cliente. (Ej: 404 Not Found – No se encuentra el recurso; 400 Bad Request – La petición está mal escrita; 401 Unauthorized – Se necesitan credenciales de acceso).</li>
+        <li>5xx: Errores del Servidor: El servidor falló al intentar atender una petición válida. (Ej: 500 Internal Server Error – Un fallo interno general; 503 Service Unavailable – El servicio no está disponible temporalmente).</li>
+    </ul>
+</body>
+</html>
